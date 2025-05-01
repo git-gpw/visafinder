@@ -1,0 +1,17 @@
+{
+  "name": "Prenota Counter",
+  "description": "Counts visits, exports CSV, opens page on schedule.",
+  "version": "0.6",
+  "manifest_version": 3,
+
+  "permissions": [
+    "history",
+    "storage",
+    "downloads",
+    "alarms",   
+    "tabs"      
+  ],
+
+  "background": { "service_worker": "background.js" },
+  "action":     { "default_popup": "popup.html" }
+}

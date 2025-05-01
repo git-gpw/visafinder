@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Visit Counter</title>
+
+    <style>
+      /* ---------- layout ---------- */
+      *            { box-sizing: border-box; }
+      body         { margin: 16px; width: 240px;
+                     font: 14px/1.4 system-ui, sans-serif; }
+
+      h1#count     { margin: 0; font-size: 2rem; }
+
+      button       { width: 100%; margin-top: 8px; padding: 8px;
+                     border: none; border-radius: 6px; cursor: pointer;
+                     font-weight: 600; background: #007bff; color: #fff; }
+      button:hover { filter: brightness(1.1); }
+      /*italian flag background*/
+      #exportBtn {
+          background: linear-gradient(
+            to right,
+          #009246 0% 33%,     /* green  */
+          #ffffff 33% 66%,    /* white  */
+          #ce2b37 66% 100%    /* red    */
+        );
+        color: #000;          /* black text on white center stripe */
+        border: 1px solid #666;
+      }
+      #exportBtn:hover { filter: brightness(1.05); }
+
+      /* ---------- pulse animation ---------- */
+      @keyframes pulse {
+        0%   { transform: scale(1);   }
+        50%  { transform: scale(1.25);}
+        100% { transform: scale(1);   }
+      }
+      .animate { animation: pulse 400ms ease-out; }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="count">0</h1>
+    <p>manual visits to <code id="target">–</code></p>
+    <p><em>ultima:</em> <strong id="lastManual">–</strong></p>
+
+    <h1 id="auto">0</h1>
+    <p>automated visits</p>
+    <p><strong id="lastAuto">–</strong></p>
+
+    <button id="exportBtn" title="Scarica CSV">Export CSV</button>
+
+    <!-- logic lives in popup.js -->
+    <script src="popup.js"></script>
+  </body>
+</html>
